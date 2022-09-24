@@ -1,31 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Fylo data storage component</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+	<title>Fylo data storage component</title>
+
+	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	<style>
+		body {
+			background: url('./images/bg-mobile.png');
+			background-repeat: no-repeat;
+			background-size: 100%;
+			margin: 0;
+		}
+
+		main {
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		main>div {
+			padding: 1em;
+			display: inherit;
+			flex-direction: column;
+		}
+
+		.left {
+			border-radius: 10px;
+			border-top-right-radius: 4em;
+			background-color: hsl(228, 56%, 26%);
+			padding: 2.5em;
+		}
+
+		.logo_container {
+			margin-bottom: 1.5em;
+		}
+
+		.btn {
+			padding: 1em;
+			width: 50px;
+			height: 50px;
+			margin: .5em;
+			text-align: center;
+			border: 0;
+			border-radius: 9px;
+			background-color: hsl(229, 57%, 11%);
+		}
+		.btn > svg {
+			padding: 0;
+			margin: 0;
+			vertical-align: middle;
+		}
+		.btn:first-child {
+			margin-left: 0;
+		}
+
+		.attribution {
+			font-size: 11px;
+			text-align: center;
+			display: none;
+		}
+
+		.attribution a {
+			color: hsl(228, 45%, 44%);
+		}
+	</style>
 </head>
+
 <body>
 
-  You’ve used 815 GB of your storage
+	<main>
+		<div>
+			<div class='left'>
+				<div class='logo_container'>
+					<img src='./images/logo.svg' alt='fylo logo'>
+				</div>
+				<div class='btns_container'>
+					<button class='btn' type='button' aria-label='Documents'>
+						<svg aria-hidden='true' focusable='false' xmlns="http://www.w3.org/2000/svg" width="20"
+							height="24">
+							<path fill="#697ED4"
+								d="M12.028 0H2.436A2.387 2.387 0 00.049 2.398L.037 21.583a2.387 2.387 0 002.387 2.398h14.4a2.397 2.397 0 002.398-2.398V7.194L12.028 0zM10.83 8.393V1.8l6.595 6.594h-6.595z" />
+						</svg>
+					</button>
+					<button aria-label='Folders' class='btn' type='button'>
+						<svg aria-hidden='true' focusable='false' xmlns="http://www.w3.org/2000/svg" width="24"
+							height="20">
+							<path fill="#697ED4"
+								d="M21.6 2.4H12L9.6 0H2.4A2.39 2.39 0 00.012 2.4L0 16.8a2.4 2.4 0 002.4 2.4h19.2a2.4 2.4 0 002.4-2.4v-12a2.4 2.4 0 00-2.4-2.4z" />
+						</svg>
+					</button>
+					<button aria-label='Upload' class='btn' type='button'>
+						<svg aria-hidden='true' focusable='false' xmlns="http://www.w3.org/2000/svg" width="24"
+							height="16">
+							<path fill="#697ED4"
+								d="M19.4 6c-.7-3.4-3.7-6-7.4-6-2.9 0-5.4 1.6-6.6 4C2.3 4.4 0 6.9 0 10c0 3.3 2.7 6 6 6h13c2.8 0 5-2.2 5-5 0-2.6-2.1-4.8-4.6-5zM14 9v4h-4V9H7l5-5 5 5h-3z" />
+						</svg>
+					</button>
+				</div>
+			</div>
+			<div class='right'>
+				<p class='strg_left'>
+					<span>185</span> GB Left
+				</p>
+				<label for='storage'>You've used <span>815 GB</span> of your storage</label>
+				<progress id='storage' max='1000' value='915'>915 GB</progress>
 
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+			</div>
+		</div>
+	</main>
+
+	<div class="attribution">
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+		Coded by <a href="https://bit01.rf.gd">Bassel Aflak</a>.
+	</div>
 </body>
+
 </html>
