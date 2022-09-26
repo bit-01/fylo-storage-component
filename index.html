@@ -12,11 +12,14 @@
 
 	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 		body {
 			background: url('./images/bg-mobile.png');
 			background-repeat: no-repeat;
 			background-size: 100%;
 			margin: 0;
+			font-family: 'Raleway', sans-serif;
 		}
 
 		main {
@@ -33,11 +36,27 @@
 			flex-direction: column;
 		}
 
-		.left {
+		.left,
+		.right {
 			border-radius: 10px;
-			border-top-right-radius: 4em;
 			background-color: hsl(228, 56%, 26%);
 			padding: 2.5em;
+			margin: .5em;
+			color: hsl(243, 100%, 93%);
+			position: relative;
+		}
+
+		.left {
+			border-top-right-radius: 4em;
+		}
+
+		.right {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-size: 14px;
 		}
 
 		.logo_container {
@@ -54,11 +73,13 @@
 			border-radius: 9px;
 			background-color: hsl(229, 57%, 11%);
 		}
-		.btn > svg {
+
+		.btn>svg {
 			padding: 0;
 			margin: 0;
 			vertical-align: middle;
 		}
+
 		.btn:first-child {
 			margin-left: 0;
 		}
@@ -68,6 +89,82 @@
 			text-align: center;
 			display: none;
 		}
+
+		.strg_left {
+			position: absolute;
+			bottom: -65px;
+			background-color: #fff;
+			color: hsl(229, 57%, 11%);
+			border-radius: .3em;
+			padding: .3em .8em;
+			font-weight: 700;
+			text-transform: uppercase;
+			font-size: 32px;
+		}
+
+		.strg_left sub {
+			color: hsl(229, 7%, 55%);
+			font-size: 10px;
+			position: relative;
+			top: -10px;
+		}
+
+		label[for='storage'] span {
+			font-weight: 700;
+		}
+
+		span[role='meter'] {
+			display: block;
+			width: 100%;
+			height: 15px;
+			border: none;
+			background-color: hsl(227.8, 56.3%, 17.1%);
+			margin: 1em;
+			border-radius: 3em;
+			padding: .2em;
+			position: relative;
+			text-align: start;
+		}
+
+		span[role='meter']::before,
+		span[role='meter']::after {
+			font-size: 10px;
+			position: absolute;
+			font-weight: 300;
+			color: #fff;
+			bottom: -15px;
+		}
+
+		span[role='meter']::before {
+			content: '0 GB';
+			left: -12px;
+		}
+
+		span[role='meter']::after {
+			content: '1000 GB';
+			right: -12px;
+		}
+
+		span[role='meter']>span {
+			border-radius: 3em;
+			background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+			display: flex;
+			height: 100%;
+			position: inherit;
+		}
+
+		span[role='meter']>span::before {
+			content: '';
+			width: 10px;
+			height: 10px;
+			background: #fff;
+			position: absolute;
+			right: 4px;
+			border-radius: 100%;
+			align-self: center;
+		}
+
+		
 
 		.attribution a {
 			color: hsl(228, 45%, 44%);
@@ -109,10 +206,13 @@
 			</div>
 			<div class='right'>
 				<p class='strg_left'>
-					<span>185</span> GB Left
+					185 <sub>GB Left</sub>
 				</p>
-				<label for='storage'>You've used <span>815 GB</span> of your storage</label>
-				<progress id='storage' max='1000' value='915'>915 GB</progress>
+				<label for='storage' id="storage_label">You've used <span>815 GB</span> of your storage</label>
+				<span role="meter" id='storage' aria-valuetext="815 GB" aria-valuenow="815" aria-valuemin="0"
+					aria-valuemax="1000" aria-labelledby="storage_label">
+					<span style="width: 81.5%;"></span>
+				</span>
 
 			</div>
 		</div>
