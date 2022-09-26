@@ -164,7 +164,55 @@
 			align-self: center;
 		}
 
-		
+
+		@media (min-width: 992px) {
+			body {
+				background: url('./images/bg-desktop.png') hsl(227.8, 56.3%, 17.1%);
+				background-repeat: no-repeat;
+				background-position: bottom;
+				background-size: contain;
+			}
+
+			main>div {
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: flex-start;
+			}
+
+			.right {
+				width: 500px;
+				text-align: start;
+				padding: 2.5em !important;
+				align-self: end;
+			}
+
+			label[for='storage'] span {
+				align-self: flex-start;
+			}
+
+			.left,
+			.right {
+				padding: 1.5em;
+				flex: 1 auto;
+			}
+
+			.strg_left::before {
+				content: "";
+				width: 0px;
+				height: 0px;
+				position: absolute;
+				right: 0;
+				bottom: -23px;
+				border-left: 30px solid transparent;
+				border-right: 0px solid transparent;
+				border-top: 30px solid #fff;
+			}
+
+			.strg_left {
+				bottom: 62%;
+				right: 27px;
+			}
+		}
 
 		.attribution a {
 			color: hsl(228, 45%, 44%);
